@@ -564,7 +564,7 @@ double CSSPrimitiveValue::computeLengthDouble(const RenderStyle* style, const Re
             // We really need to compute EX using fontMetrics for the original specifiedSize and not use
             // our actual constructed rendering font.
             if (style->fontMetrics().hasXHeight())
-                factor = style->fontMetrics().xHeight();
+                factor = style->fontMetrics().xHeight() * 2.0;
             else
                 factor = (computingFontSize ? style->fontDescription().specifiedSize() : style->fontDescription().computedSize()) / 2.0;
             break;
